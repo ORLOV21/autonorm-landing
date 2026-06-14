@@ -334,17 +334,18 @@ h1,h2,h3{line-height:1.12;font-weight:800;letter-spacing:-.02em}
 .pricing__note{font-size:.84rem;color:var(--dim);margin-top:1.3rem;text-align:center;max-width:70ch;margin-inline:auto}
 
 /* ---------- РЫНОК / ФИНМОДЕЛЬ ---------- */
-.market{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
-.tam{display:flex;flex-direction:column;gap:1rem}
-.tam__row{display:flex;align-items:center;gap:1rem}
-.tam__bar{height:54px;border-radius:var(--radius-sm);display:flex;align-items:center;padding-inline:1rem;font-family:var(--mono);font-weight:700;color:var(--accent-ink);flex:none}
-.tam__bar span{font-size:.9rem}
+.market{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;align-items:start}
+.tam{display:flex;flex-direction:column;gap:1.5rem;min-width:0}
+.tam__row{min-width:0}
+.tam__bar{height:46px;border-radius:var(--radius-sm);display:flex;align-items:center;padding-inline:1rem;font-family:var(--mono);font-weight:700;color:var(--accent-ink)}
+.tam__bar span{font-size:.9rem;letter-spacing:.05em}
 .tam__bar--tam{width:100%;background:var(--grad)}
-.tam__bar--sam{width:62%;background:linear-gradient(135deg,#5b9dff,#4f7fe0);color:#fff}
-.tam__bar--som{width:32%;background:rgba(91,157,255,.25);color:var(--text);box-shadow:inset 0 0 0 1px var(--line-2)}
-.tam__val{font-size:1.05rem;font-weight:700}
-.tam__val small{display:block;font-weight:400;font-size:.78rem;color:var(--dim);margin-top:.15rem}
-.fin{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.tam__bar--sam{width:74%;background:linear-gradient(135deg,#5b9dff,#4f7fe0);color:#fff}
+.tam__bar--som{width:48%;background:rgba(91,157,255,.22);color:var(--text);box-shadow:inset 0 0 0 1px var(--line-2)}
+.tam__val{margin-top:.5rem;font-size:.82rem;color:var(--dim)}
+.tam__val b{display:block;font-family:var(--mono);font-size:1.15rem;font-weight:700;color:var(--text);margin-bottom:.12rem}
+.tam__val small{display:block}
+.fin{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;min-width:0}
 .fin__cell{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.2rem 1.3rem}
 .fin__num{font-family:var(--mono);font-size:1.9rem;font-weight:700;line-height:1;color:transparent;background:var(--grad);-webkit-background-clip:text;background-clip:text}
 .fin__num small{font-size:.8rem;font-weight:500;color:var(--dim);margin-left:.25rem;-webkit-text-fill-color:var(--dim)}
@@ -373,6 +374,14 @@ h1,h2,h3{line-height:1.12;font-weight:800;letter-spacing:-.02em}
 .cta__invest{margin-top:1.4rem;font-size:.92rem;color:var(--dim)}
 .cta__invest a{color:var(--accent-2);font-weight:600}
 .cta__invest a:hover{text-decoration:underline}
+.invest-points{text-align:left;display:grid;gap:.75rem;margin:1.8rem auto .4rem;max-width:560px}
+.invest-points li{position:relative;padding-left:1.7rem;color:var(--muted);font-size:1rem}
+.invest-points li::before{content:"✓";position:absolute;left:0;top:0;color:var(--ok);font-weight:700}
+.invest-points b{color:var(--text);font-weight:600}
+.cta__status{margin-top:1.5rem;font-family:var(--mono);font-size:.86rem;color:var(--accent-2)}
+.risk__h{font-size:1.08rem;margin-bottom:.5rem}
+.risk__t{font-size:.92rem;color:var(--muted);margin-bottom:.8rem}
+.risk__m{font-size:.9rem;color:var(--text)}
 
 /* ---------- FOOTER ---------- */
 .footer{border-top:1px solid var(--line);background:var(--bg-2);padding-block:2.6rem 1.6rem}
