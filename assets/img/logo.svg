@@ -1,0 +1,18 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AutoNorm">
+  <defs>
+    <linearGradient id="an-g" x1="4" y1="4" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5b9dff"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="34" height="34" rx="9" fill="url(#an-g)"/>
+  <!-- blueprint ticks -->
+  <g stroke="#08111f" stroke-opacity="0.30" stroke-width="1">
+    <line x1="9" y1="3" x2="9" y2="7"/>
+    <line x1="31" y1="33" x2="31" y2="37"/>
+    <line x1="3" y1="31" x2="7" y2="31"/>
+    <line x1="33" y1="9" x2="37" y2="9"/>
+  </g>
+  <!-- check / norm mark -->
+  <path d="M11.5 20.8l5.2 5.2L28.7 14" stroke="#08111f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

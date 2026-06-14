@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.classList.add('js')</script>
+  <title>AutoNorm — AI-проверка проектной документации и BIM-моделей</title>
+  <meta name="description" content="AutoNorm — российская AI-платформа: автоматически проверяет чертежи и BIM-модели на нормы, коллизии и завышения смет. Проходите экспертизу с первого раза." />
+  <meta name="theme-color" content="#0a0d14" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AutoNorm — AI-проверка проектной документации и BIM" />
+  <meta property="og:description" content="Находим ошибки, коллизии и завышения до экспертизы. Проходите экспертизу с первого раза." />
+  <meta property="og:locale" content="ru_RU" />
+  <link rel="preload" href="assets/fonts/inter-cyrillic-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/inter-cyrillic-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/css/fonts.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#hero">К содержимому</a>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="top">
+    <div class="container nav">
+      <a class="logo" href="#top" aria-label="AutoNorm — на главную">
+        <img src="assets/img/logo.svg" width="34" height="34" alt="" />
+        <span class="logo__word">autonorm</span>
+      </a>
+      <nav class="nav__links" id="nav-menu" aria-label="Основная навигация">
+        <a class="nav__link" href="#problem">Проблема</a>
+        <a class="nav__link" href="#how">Решение</a>
+        <a class="nav__link" href="#interface">Интерфейс</a>
+        <a class="nav__link" href="#competitors">Конкуренты</a>
+        <a class="nav__link" href="#pricing">Тарифы</a>
+        <a class="nav__link" href="#market">Рынок</a>
+      </nav>
+      <a class="btn btn--primary nav__cta" href="#cta">Запросить демо</a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Меню" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow"><span class="eyebrow__dot"></span>AI-платформа для стройотрасли · ТИМ-ready</p>
+          <h1 class="hero__title">Проходите экспертизу <span class="grad">с первого раза</span></h1>
+          <p class="hero__sub">
+            AutoNorm автоматически проверяет проектную документацию и BIM-модели на соответствие нормам,
+            находит коллизии, дубли и завышения смет — и формирует отчёт «под экспертизу». За минуты, а не недели.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" href="#cta">Запросить демо</a>
+            <a class="btn btn--ghost btn--lg" href="#how">Как это работает →</a>
+          </div>
+          <dl class="hero__stats">
+            <div class="hero__stat">
+              <dt class="hero__stat-num" data-count="271" data-suffix=" млрд ₽">271 млрд ₽</dt>
+              <dd class="hero__stat-label">цена ошибок в проектной документации за год*</dd>
+            </div>
+            <div class="hero__stat">
+              <dt class="hero__stat-num">с 01.04.2026</dt>
+              <dd class="hero__stat-label">ТИМ обязателен — проверок станет кратно больше</dd>
+            </div>
+          </dl>
+          <p class="hero__note">* по данным Главгосэкспертизы (приведены в материалах проекта)</p>
+        </div>
+
+        <!-- мини-превью продукта -->
+        <div class="hero__visual" aria-hidden="false">
+          <div class="mini-app">
+            <div class="mini-app__bar">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="mini-app__title">autonorm · проверка</span>
+            </div>
+            <div class="mini-app__body">
+              <div class="mini-prompt">
+                <span class="mini-prompt__label">Запрос</span>
+                <p class="mini-prompt__text" id="hero-typed"></p>
+              </div>
+              <div class="mini-scan">
+                <span class="mini-scan__bar"></span>
+                <span class="mini-scan__txt">Анализ модели · 12 318 элементов</span>
+              </div>
+              <ul class="mini-issues">
+                <li><span class="sev sev--high">высокая</span> Коллизия: стена ST-204 × воздуховод V-12</li>
+                <li><span class="sev sev--mid">средняя</span> Параметр «Этаж» = «3 этаж» (ожид. «3»)</li>
+                <li><span class="sev sev--low">низкая</span> Завышение объёма бетона +4.2%</li>
+              </ul>
+              <div class="mini-app__foot">
+                <span class="mini-ok">✓ Отчёт готов</span>
+                <span class="mini-tags">PDF · Excel · BCF</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>IFC</span><span>Revit / RVT</span><span>AutoCAD / DWG</span><span>nanoCAD</span><span>Renga</span>
+          <span>СП · СНиП</span><span>СПДС ГОСТ Р 21.101</span><span>КСИ</span><span>BCF</span>
+          <span>IFC</span><span>Revit / RVT</span><span>AutoCAD / DWG</span><span>nanoCAD</span><span>Renga</span>
+          <span>СП · СНиП</span><span>СПДС ГОСТ Р 21.101</span><span>КСИ</span><span>BCF</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROBLEM ============ -->
+    <section class="section section--alt" id="problem">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">01 · Проблема</p>
+          <h2 class="section__title">Ошибки в документации стоят отрасли сотни миллиардов</h2>
+          <p class="section__lead">
+            Проверки делаются вручную, инструменты разрознены, а цена пропущенной ошибки — переделки,
+            сорванные сроки и провал экспертизы. С обязательным ТИМ-2026 объём проверок только растёт.
+          </p>
+        </div>
+        <div class="stats stats--3">
+          <div class="stat reveal">
+            <div class="stat__num grad" data-count="271" data-suffix=" млрд ₽">271 млрд ₽</div>
+            <div class="stat__label">ошибки и завышения в проектной документации за год (Главгосэкспертиза)</div>
+          </div>
+          <div class="stat reveal">
+            <div class="stat__num grad" data-count="111" data-suffix=" млрд ₽">111 млрд ₽</div>
+            <div class="stat__label">экономия на федеральных проектах после проверки документации</div>
+          </div>
+          <div class="stat reveal">
+            <div class="stat__num grad" data-count="4.2" data-suffix="%">4.2%</div>
+            <div class="stat__label">средний масштаб завышений в проектных сметах</div>
+          </div>
+        </div>
+        <ul class="bullets reveal">
+          <li><span class="bullets__x">✕</span> Срывы сроков, перерасход и репутационные потери для девелоперов</li>
+          <li><span class="bullets__x">✕</span> Завышенные сметы стали системной проблемой</li>
+          <li><span class="bullets__x">✕</span> Каждый второй проект возвращается на доработку</li>
+          <li><span class="bullets__check">✓</span> Росстандарт и Минстрой: нацстандарт ТИМ, обязательность с 1 апреля 2026</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ AUDIENCE / SEGMENTS ============ -->
+    <section class="section" id="audience">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">02 · Для кого</p>
+          <h2 class="section__title">Три роли — одна боль: ручная проверка</h2>
+          <p class="section__lead">
+            Мы поговорили с пользователями, покупателями и заказчиками. У каждого сегмента — своя боль,
+            и AutoNorm закрывает её по-своему.
+          </p>
+        </div>
+        <div class="cards cards--3">
+          <article class="card aud reveal">
+            <div class="aud__role">Пользователь</div>
+            <h3 class="aud__who">BIM-специалист, координатор, проектировщик</h3>
+            <p class="aud__pain"><span class="tag tag--pain">Боль</span> Ручная проверка моделей, коллизий и чертежей съедает часы и ведёт к ошибкам.</p>
+            <p class="aud__gain"><span class="tag tag--gain">AutoNorm</span> Автопроверка, фильтр замечаний по критичности, история проверок.</p>
+          </article>
+          <article class="card aud reveal">
+            <div class="aud__role">Покупатель</div>
+            <h3 class="aud__who">Проектное бюро, девелопер, генподрядчик</h3>
+            <p class="aud__pain"><span class="tag tag--pain">Боль</span> Ошибки ведут к доработкам, задержкам и росту затрат.</p>
+            <p class="aud__gain"><span class="tag tag--gain">AutoNorm</span> Контроль качества документации, отчёты «под экспертизу» для команды и заказчика.</p>
+          </article>
+          <article class="card aud reveal">
+            <div class="aud__role">Enterprise</div>
+            <h3 class="aud__who">Крупный строительный холдинг</h3>
+            <p class="aud__pain"><span class="tag tag--pain">Боль</span> Нужны единые стандарты, интеграции, SLA и масштаб на сотни специалистов.</p>
+            <p class="aud__gain"><span class="tag tag--gain">AutoNorm</span> Кастом-правила, внедрение, обучение, SLA, интеграции с ИТ-системами.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section section--alt" id="how">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">03 · Решение</p>
+          <h2 class="section__title">От модели до отчёта — за 4 шага</h2>
+          <p class="section__lead">
+            Без сложной настройки правил. Опишите проверку обычным текстом — или выберите готовый пресет.
+          </p>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <div class="step__num">01</div>
+            <h3 class="step__title">Загрузка</h3>
+            <p class="step__text">Перетащите чертёж (PDF) или BIM-модель: IFC / RVT / DWG / Renga. Без подготовки модели.</p>
+          </li>
+          <li class="step reveal">
+            <div class="step__num">02</div>
+            <h3 class="step__title">Запрос</h3>
+            <p class="step__text">Опишите проверку текстом (промпт) или выберите пресет: коллизии, нормы СП/СНиП, СПДС.</p>
+          </li>
+          <li class="step reveal">
+            <div class="step__num">03</div>
+            <h3 class="step__title">AI-проверка</h3>
+            <p class="step__text">Система анализирует файл на соответствие нормам и загруженным документам.</p>
+          </li>
+          <li class="step reveal">
+            <div class="step__num">04</div>
+            <h3 class="step__title">Отчёт</h3>
+            <p class="step__text">Список замечаний с критичностью и рекомендациями. Экспорт в PDF / Excel / BCF.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ PLATFORM MODULES ============ -->
+    <section class="section" id="platform">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">04 · Платформа</p>
+          <h2 class="section__title">Один продукт — вместо зоопарка инструментов</h2>
+          <p class="section__lead">
+            Модули подтверждены кастдевом (что болит → что делаем). Честно делим, что уже в MVP, а что — в дорожной карте.
+          </p>
+        </div>
+        <div class="cards cards--3 modules">
+          <article class="card module reveal">
+            <div class="module__top"><span class="module__ico">⊘</span><span class="badge badge--mvp">MVP</span></div>
+            <h3 class="module__title">Проверка коллизий</h3>
+            <p class="module__text">Navisworks выдаёт только ID элементов — мы показываем суть и место проблемы.</p>
+          </article>
+          <article class="card module reveal">
+            <div class="module__top"><span class="module__ico">§</span><span class="badge badge--mvp">MVP</span></div>
+            <h3 class="module__title">Соответствие нормам и документации</h3>
+            <p class="module__text">Сверка модели и чертежей со СП / СНиП и загруженной проектной документацией.</p>
+          </article>
+          <article class="card module reveal">
+            <div class="module__top"><span class="module__ico">▤</span><span class="badge badge--soon">Roadmap</span></div>
+            <h3 class="module__title">Авто-оформление чертежей (СПДС)</h3>
+            <p class="module__text"><strong>75% респондентов</strong> назвали это болью №1: марки, площади, узлы вручную.</p>
+          </article>
+          <article class="card module reveal">
+            <div class="module__top"><span class="module__ico">⌗</span><span class="badge badge--soon">Roadmap</span></div>
+            <h3 class="module__title">Классификации КСИ</h3>
+            <p class="module__text">Ручной поиск кодов в огромных таблицах — «адская рутина». Автозаполнение по КСИ и кастому.</p>
+          </article>
+          <article class="card module reveal">
+            <div class="module__top"><span class="module__ico">≟</span><span class="badge badge--soon">Roadmap</span></div>
+            <h3 class="module__title">Корректность параметров</h3>
+            <p class="module__text">Не просто «заполнено ли», а «правильно ли»: «Этаж» = «1» / «1 этаж» → единый формат.</p>
+          </article>
+          <article class="card module reveal">
+            <div class="module__top"><span class="module__ico">✦</span><span class="badge badge--soon">Roadmap</span></div>
+            <h3 class="module__title">BIM-chat</h3>
+            <p class="module__text">AI-поиск по модели и нормам: «покажи все помещения с отделкой "гранит"», сводный отчёт ГИПа.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INTERFACE / MOCKUPS ============ -->
+    <section class="section section--alt" id="interface">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">05 · Интерфейс</p>
+          <h2 class="section__title">Путь от «есть модель» до «есть список ошибок»</h2>
+          <p class="section__lead">
+            Понятные статусы, фильтры по критичности, история проверок и экспорт — ключевые UX-паттерны индустрии.
+          </p>
+        </div>
+
+        <div class="app reveal">
+          <div class="app__bar">
+            <div class="app__dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="app__tabs" role="tablist" aria-label="Экраны продукта">
+              <button class="app__tab is-active" role="tab" aria-selected="true"  id="tab-upload" aria-controls="panel-upload">Загрузка</button>
+              <button class="app__tab" role="tab" aria-selected="false" id="tab-check"  aria-controls="panel-check">Проверка</button>
+              <button class="app__tab" role="tab" aria-selected="false" id="tab-issues" aria-controls="panel-issues">Замечания</button>
+              <button class="app__tab" role="tab" aria-selected="false" id="tab-report" aria-controls="panel-report">Отчёт</button>
+            </div>
+            <div class="app__url">autonorm.ru/app</div>
+          </div>
+
+          <div class="app__body">
+            <aside class="app__side" aria-hidden="true">
+              <div class="app__brand"><img src="assets/img/logo.svg" width="22" height="22" alt=""/> autonorm</div>
+              <nav class="app__nav">
+                <span class="app__navitem is-active">▣ Проекты</span>
+                <span class="app__navitem">⊘ Проверки</span>
+                <span class="app__navitem">▤ Отчёты</span>
+                <span class="app__navitem">✦ BIM-chat</span>
+                <span class="app__navitem">⚙ Настройки</span>
+              </nav>
+              <div class="app__proj">
+                <span class="app__proj-label">Проект</span>
+                ЖК «Северный» · корпус 2
+              </div>
+            </aside>
+
+            <div class="app__main">
+              <!-- UPLOAD -->
+              <div class="tabpanel is-active" id="panel-upload" role="tabpanel" aria-labelledby="tab-upload" tabindex="0">
+                <div class="dropzone">
+                  <div class="dropzone__ico">↥</div>
+                  <p class="dropzone__title">Перетащите файл или выберите</p>
+                  <p class="dropzone__hint">До 2 ГБ. Модель или чертёж — без предварительной подготовки.</p>
+                  <div class="chips">
+                    <span class="chip">IFC</span><span class="chip">RVT</span><span class="chip">DWG</span>
+                    <span class="chip">PDF</span><span class="chip">Renga</span>
+                  </div>
+                </div>
+                <div class="filelist">
+                  <div class="filelist__head">Недавние файлы</div>
+                  <div class="file"><span class="file__ico">▤</span><span class="file__name">ЖК_Северный_корпус2_АР.rvt</span><span class="file__meta">84 МБ · загружен</span></div>
+                  <div class="file"><span class="file__ico">▤</span><span class="file__name">Корпус_2_ОВ.ifc</span><span class="file__meta">51 МБ · загружен</span></div>
+                  <div class="file"><span class="file__ico">▤</span><span class="file__name">Смета_раздел3.pdf</span><span class="file__meta">3.2 МБ · загружен</span></div>
+                </div>
+              </div>
+
+              <!-- CHECK -->
+              <div class="tabpanel" id="panel-check" role="tabpanel" aria-labelledby="tab-check" tabindex="0" hidden>
+                <div class="field">
+                  <label class="field__label">Запрос на проверку</label>
+                  <div class="field__box">Проверь модель на коллизии инженерных систем и соответствие СП 60.13330; найди завышения в смете раздела 3.</div>
+                </div>
+                <div class="presets">
+                  <span class="preset is-on">✓ Коллизии</span>
+                  <span class="preset is-on">✓ Нормы СП / СНиП</span>
+                  <span class="preset is-on">✓ Проектная документация</span>
+                  <span class="preset">Оформление СПДС</span>
+                  <span class="preset">Классификации КСИ</span>
+                </div>
+                <button class="btn btn--primary app__run" type="button">▶ Запустить проверку</button>
+                <div class="runline"><span class="runline__bar"></span></div>
+                <p class="runline__txt">Анализ · 12 318 элементов · ~40 сек</p>
+              </div>
+
+              <!-- ISSUES -->
+              <div class="tabpanel" id="panel-issues" role="tabpanel" aria-labelledby="tab-issues" tabindex="0" hidden>
+                <div class="issues__top">
+                  <div class="counts">
+                    <span class="count"><b>47</b> замечаний</span>
+                    <span class="count count--high"><b>8</b> высоких</span>
+                    <span class="count count--mid"><b>21</b> средних</span>
+                    <span class="count count--low"><b>18</b> низких</span>
+                  </div>
+                  <div class="filters"><span class="filter is-on">Все</span><span class="filter">Высокие</span><span class="filter">Открытые</span></div>
+                </div>
+                <div class="table-wrap">
+                  <table class="dtable">
+                    <thead>
+                      <tr><th>#</th><th>Критич.</th><th>Элемент</th><th>Описание</th><th>Норма</th><th>Ответственный</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>01</td><td><span class="sev sev--high">высокая</span></td><td>Стена ST-204 <em>id 84213</em></td><td>Коллизия с воздуховодом V-12</td><td>СП 60.13330</td><td>Инженер ОВ</td></tr>
+                      <tr><td>02</td><td><span class="sev sev--high">высокая</span></td><td>Колонна K-7 <em>id 11902</em></td><td>Пересечение с балкой B-3</td><td>—</td><td>Конструктор</td></tr>
+                      <tr><td>03</td><td><span class="sev sev--mid">средняя</span></td><td>Помещение 312</td><td>Параметр «Этаж» = «3 этаж» (ожид. «3»)</td><td>КСИ</td><td>BIM-координатор</td></tr>
+                      <tr><td>04</td><td><span class="sev sev--mid">средняя</span></td><td>Лист АР-14</td><td>Отсутствует марка узла</td><td>СПДС 21.101</td><td>Архитектор</td></tr>
+                      <tr><td>05</td><td><span class="sev sev--low">низкая</span></td><td>Смета · р.3</td><td>Завышение объёма бетона +4.2%</td><td>—</td><td>Сметчик</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- REPORT -->
+              <div class="tabpanel" id="panel-report" role="tabpanel" aria-labelledby="tab-report" tabindex="0" hidden>
+                <div class="report">
+                  <div class="report__doc">
+                    <div class="report__docbar">отчёт_проверки_ЖК_Северный.pdf</div>
+                    <div class="report__page">
+                      <div class="report__h">Отчёт о проверке</div>
+                      <div class="report__row"><span>Проект</span><span>ЖК «Северный» · корпус 2</span></div>
+                      <div class="report__row"><span>Дата</span><span>14.06.2026</span></div>
+                      <div class="report__row"><span>Замечаний</span><span>47 (8 высоких)</span></div>
+                      <div class="report__row"><span>Статус</span><span class="report__status">требует доработки</span></div>
+                      <div class="report__bars"><i style="--w:80%"></i><i style="--w:55%"></i><i style="--w:92%"></i><i style="--w:40%"></i></div>
+                    </div>
+                  </div>
+                  <div class="report__side">
+                    <h3 class="report__title">Готово к выгрузке</h3>
+                    <p class="report__text">Формат принимается экспертизой. Поделитесь с командой или заказчиком.</p>
+                    <div class="report__btns">
+                      <button class="btn btn--primary" type="button">↓ PDF</button>
+                      <button class="btn btn--ghost" type="button">↓ Excel</button>
+                      <button class="btn btn--ghost" type="button">↓ BCF</button>
+                    </div>
+                    <div class="report__saved">✓ Экономия ≈ 18 ч на этом проекте</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="app__caption">Интерактивно: переключайте экраны выше. Дизайн-макет продукта (иллюстрация UX-сценария).</p>
+      </div>
+    </section>
+
+    <!-- ============ UTP / COMPETITORS ============ -->
+    <section class="section" id="competitors">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">06 · УТП и конкуренты</p>
+          <h2 class="section__title">Альтернативы есть. Быстрого русского AI-сценария — нет</h2>
+          <p class="section__lead">
+            Иностранные решения дороги и недоступны в РФ; российские — тяжёлые в настройке. AutoNorm —
+            проверка через промпт «написал → загрузил → результат», локализация и доступность.
+          </p>
+        </div>
+        <div class="table-wrap reveal">
+          <table class="ctable">
+            <thead>
+              <tr><th>Решение</th><th>Страна</th><th>Цена (ориентир)</th><th>Удобство</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Solibri Office</td><td>Финляндия</td><td>€164/мес</td><td>сложная настройка правил, нужно обучение</td></tr>
+              <tr><td>BIMcollab Zoom</td><td>Нидерланды</td><td>€600–950/год</td><td>неинтуитивно, нужно разбираться в интеграциях</td></tr>
+              <tr><td>Autodesk Checker</td><td>США</td><td>Free</td><td>зависимость от шаблонов, тяжело новичкам</td></tr>
+              <tr><td>InspectionXpert</td><td>США</td><td>$125–235/мес</td><td>много ручных операций</td></tr>
+              <tr><td>UpCodes</td><td>США</td><td>$39–45/мес</td><td>только справочник, без проверки BIM/чертежей</td></tr>
+              <tr><td>Tangl</td><td>Россия</td><td>~138 000 ₽/модуль</td><td>тяжёлая экосистема, ручная настройка</td></tr>
+              <tr><td>ASCON Pilot-BIM</td><td>Россия</td><td>по запросу</td><td>интерфейс перегружен, нужна подготовка</td></tr>
+              <tr class="ctable__us"><td>★ AutoNorm</td><td>Россия</td><td>от 3 000 ₽/мес</td><td>гибкая проверка через промпт: написал → загрузил → результат</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESEARCH ============ -->
+    <section class="section section--alt" id="research">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">07 · Исследование</p>
+          <h2 class="section__title">Мы не придумали проблему — мы её подтвердили</h2>
+        </div>
+        <div class="research">
+          <div class="research__funnel">
+            <div class="fstep reveal"><div class="fstep__num">96</div><div class="fstep__lbl">специалистам написали</div></div>
+            <div class="farrow" aria-hidden="true">→</div>
+            <div class="fstep reveal"><div class="fstep__num">25</div><div class="fstep__lbl">глубинных кастдевов (конверсия 25%)</div></div>
+            <div class="farrow" aria-hidden="true">→</div>
+            <div class="fstep fstep--accent reveal"><div class="fstep__num">75%</div><div class="fstep__lbl">говорили про оформление чертежей</div></div>
+          </div>
+          <div class="quotes">
+            <blockquote class="quote reveal">«Заполнение классификаций — адская рутина. Нужно вручную искать коды в огромных таблицах (КСИ)». <cite>— Павел, ЮгСтройИнвест</cite></blockquote>
+            <blockquote class="quote reveal">«В Navisworks отчёт о коллизии содержит только ID элементов — приходится вручную искать их в Revit». <cite>— Алевтина, Vysotskiy consulting</cite></blockquote>
+            <blockquote class="quote reveal">«Сопоставление наименований объектов и параметров делается вручную и занимает очень много времени». <cite>— BIM-менеджер (BIM2B)</cite></blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ METRICS ============ -->
+    <section class="section" id="metrics">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">08 · Метрики</p>
+          <h2 class="section__title">Как меряем ценность и бизнес</h2>
+        </div>
+        <div class="northstar reveal">
+          <span class="northstar__tag">North Star</span>
+          <span class="northstar__name">Time Saved per User</span>
+          <span class="northstar__desc">часы, сэкономленные специалистом на одном проекте — прямая мера пользы продукта</span>
+        </div>
+        <div class="cards cards--3 metrics">
+          <article class="card metric reveal">
+            <h3 class="metric__h">Бизнес</h3>
+            <ul><li>MRR — регулярная выручка</li><li>ARPU — доход с аккаунта</li><li>Churn Rate — отток</li></ul>
+          </article>
+          <article class="card metric reveal">
+            <h3 class="metric__h">Продукт</h3>
+            <ul><li>Time Saved per User</li><li>Feature Adoption Rate</li><li>Weekly Active Users</li></ul>
+          </article>
+          <article class="card metric reveal">
+            <h3 class="metric__h">Маркетинг</h3>
+            <ul><li>CAC (+ контроль LTV/CAC)</li><li>Conversion: демо → оплата</li><li>Lead Source Performance</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section class="section section--alt" id="pricing">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">09 · Тарифы</p>
+          <h2 class="section__title">Подписка SaaS — платите за пользователя</h2>
+          <p class="section__lead">
+            Ценность — в регулярной работе, поэтому подписка. Низкий порог входа: начните с демо, масштабируйтесь до Enterprise.
+          </p>
+        </div>
+        <div class="pricing">
+          <article class="price-card reveal">
+            <div class="price-card__name">Демо</div>
+            <div class="price-card__price">бесплатно</div>
+            <div class="price-card__for">пилот и знакомство</div>
+            <ul class="price-card__list">
+              <li>Ограниченный доступ к проверкам</li>
+              <li>Базовые отчёты</li>
+              <li>Без обязательств</li>
+            </ul>
+            <a class="btn btn--ghost price-card__btn" href="#cta">Попробовать</a>
+          </article>
+          <article class="price-card reveal">
+            <div class="price-card__name">Starter</div>
+            <div class="price-card__price">3 000 ₽<span>/польз./мес</span></div>
+            <div class="price-card__for">специалисты и малые команды</div>
+            <ul class="price-card__list">
+              <li>До 3 активных проектов</li>
+              <li>Проверки на коллизии и нормы</li>
+              <li>Экспорт базового отчёта</li>
+              <li>Техническая поддержка</li>
+            </ul>
+            <a class="btn btn--ghost price-card__btn" href="#cta">Выбрать</a>
+          </article>
+          <article class="price-card price-card--featured reveal">
+            <div class="price-card__badge">популярный</div>
+            <div class="price-card__name">Pro</div>
+            <div class="price-card__price">8 000 ₽<span>/польз./мес</span></div>
+            <div class="price-card__for">координаторы и проектные команды</div>
+            <ul class="price-card__list">
+              <li>Всё из Starter</li>
+              <li>Безлимит проверок + история</li>
+              <li>Совместная работа над проектом</li>
+              <li>Подробные отчёты, интеграции</li>
+              <li>Приоритетная поддержка</li>
+            </ul>
+            <a class="btn btn--primary price-card__btn" href="#cta">Выбрать Pro</a>
+          </article>
+          <article class="price-card reveal">
+            <div class="price-card__name">Enterprise</div>
+            <div class="price-card__price">индивидуально</div>
+            <div class="price-card__for">холдинги и генподрядчики</div>
+            <ul class="price-card__list">
+              <li>Всё из Pro</li>
+              <li>Кастом-правила и интеграции</li>
+              <li>Внедрение, обучение, SLA</li>
+              <li>Персональный onboarding</li>
+            </ul>
+            <a class="btn btn--ghost price-card__btn" href="#cta">Обсудить</a>
+          </article>
+        </div>
+        <p class="pricing__note">Цена привязана к экономии рабочих часов специалистов. Годовая оплата — со скидкой. Соответствует отраслевому стандарту (Revit, Navisworks — тоже по подписке).</p>
+      </div>
+    </section>
+
+    <!-- ============ MARKET / FINANCE ============ -->
+    <section class="section" id="market">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">10 · Рынок и финмодель</p>
+          <h2 class="section__title">Большой рынок и понятная экономика</h2>
+        </div>
+        <div class="market">
+          <div class="tam">
+            <div class="tam__row reveal"><div class="tam__bar tam__bar--tam"><span>TAM</span></div><div class="tam__val">≈ 10 млрд ₽<small>/год · 55 542 СРО × 2 места × 96 000 ₽</small></div></div>
+            <div class="tam__row reveal"><div class="tam__bar tam__bar--sam"><span>SAM</span></div><div class="tam__val">≈ 3,86 млрд ₽<small>/год · коммерческие проекты + лицензии</small></div></div>
+            <div class="tam__row reveal"><div class="tam__bar tam__bar--som"><span>SOM</span></div><div class="tam__val">≈ 460 млн ₽<small>достижимо за 3 года (16,1% SAM)</small></div></div>
+          </div>
+          <div class="fin">
+            <div class="fin__cell reveal"><div class="fin__num">783<small>тыс ₽</small></div><div class="fin__lbl">ARPU (на аккаунт)</div></div>
+            <div class="fin__cell reveal"><div class="fin__num">12<small>тыс ₽</small></div><div class="fin__lbl">CAC</div></div>
+            <div class="fin__cell reveal"><div class="fin__num">171<small>млн ₽</small></div><div class="fin__lbl">NPV</div></div>
+            <div class="fin__cell reveal"><div class="fin__num">7<small>мес</small></div><div class="fin__lbl">окупаемость</div></div>
+            <div class="fin__cell reveal"><div class="fin__num">420<small>млн ₽</small></div><div class="fin__lbl">выручка через 3 года</div></div>
+            <div class="fin__cell reveal"><div class="fin__num">2</div><div class="fin__lbl">пилота на согласовании</div></div>
+          </div>
+        </div>
+        <p class="market__note">Источники рыночных оценок — материалы проекта (pravdaosro.ru, government.ru, nikoliers.ru, gidmark.ru). ARPU указан на аккаунт (≈8 мест Pro), тарифы — на пользователя.</p>
+      </div>
+    </section>
+
+    <!-- ============ ROADMAP ============ -->
+    <section class="section section--alt" id="roadmap">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">11 · Дорожная карта</p>
+          <h2 class="section__title">Куда движемся</h2>
+        </div>
+        <div class="roadmap">
+          <div class="rm reveal rm--done"><div class="rm__q">Q3 2025</div><div class="rm__dot"></div><div class="rm__txt"><strong>MVP</strong> — автопроверка PDF + базовый BIM, AI-пайплайн, первые пилоты, РИД</div></div>
+          <div class="rm reveal rm--now"><div class="rm__q">Q4 2025</div><div class="rm__dot"></div><div class="rm__txt"><strong>Мы здесь</strong> — первые платящие, интеграция nanoCAD/Renga, A/B тарифов, рост SaaS</div></div>
+          <div class="rm reveal"><div class="rm__q">Q1 2026</div><div class="rm__dot"></div><div class="rm__txt">Кастомизации под отрасли, обучение моделей на данных клиентов, модули инспекций</div></div>
+          <div class="rm reveal"><div class="rm__q">Q2 2026</div><div class="rm__dot"></div><div class="rm__txt">Госэкспертизы / Enterprise, mobile-валидатор, AI BIM+IFC, подготовка раунда (Seed/Series A)</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta" id="cta">
+      <div class="cta__glow" aria-hidden="true"></div>
+      <div class="container cta__inner">
+        <h2 class="cta__title">Проверьте свой проект до экспертизы</h2>
+        <p class="cta__sub">Запросите демо — покажем на вашей модели, сколько ошибок и часов экономит AutoNorm.</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary btn--lg" href="mailto:hello@autonorm.ru?subject=Запрос%20демо%20AutoNorm">Запросить демо</a>
+          <a class="btn btn--ghost btn--lg" href="https://t.me/autonorm" rel="noopener">Написать в Telegram</a>
+        </div>
+        <p class="cta__invest">Для инвесторов: <a href="mailto:hello@autonorm.ru?subject=AutoNorm%20—%20инвестиции">обсудить раунд →</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a class="logo" href="#top"><img src="assets/img/logo.svg" width="30" height="30" alt=""/><span class="logo__word">autonorm</span></a>
+        <p class="footer__tag">AI-проверка проектной документации и BIM-моделей. Проходите экспертизу с первого раза.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Подвал">
+        <a href="#problem">Проблема</a>
+        <a href="#how">Решение</a>
+        <a href="#interface">Интерфейс</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#market">Рынок</a>
+      </nav>
+      <div class="footer__contacts">
+        <a href="mailto:hello@autonorm.ru">hello@autonorm.ru</a>
+        <a href="https://t.me/autonorm" rel="noopener">@autonorm</a>
+        <span class="footer__ph">контакты — плейсхолдеры, заменить</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2026 AutoNorm</span>
+      <span>Сделано для защиты курса «Продуктовая студия»</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
