@@ -336,6 +336,10 @@ h1,h2,h3{line-height:1.12;font-weight:800;letter-spacing:-.02em}
 /* ---------- РЫНОК / ФИНМОДЕЛЬ ---------- */
 .market{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;align-items:start}
 .tam{display:flex;flex-direction:column;gap:1.5rem;min-width:0}
+.tam--solo{max-width:880px;margin:0 auto;gap:1.8rem}
+.tam--solo .tam__bar{height:60px}
+.tam--solo .tam__val{font-size:.92rem}
+.tam--solo .tam__val b{font-size:1.35rem}
 .tam__row{min-width:0}
 .tam__bar{height:46px;border-radius:var(--radius-sm);display:flex;align-items:center;padding-inline:1rem;font-family:var(--mono);font-weight:700;color:var(--accent-ink)}
 .tam__bar span{font-size:.9rem;letter-spacing:.05em}
